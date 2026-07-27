@@ -6,10 +6,10 @@ import {
   formatPublishedAt,
 } from "@/lib/article-display";
 import { getArticles, getCategories } from "@/lib/microcms";
+import type { Article } from "@/types/article";
+import type { Category } from "@/types/category";
 
-function categoryLabel(
-  category: Awaited<ReturnType<typeof getCategories>>["contents"][number],
-): string {
+function categoryLabel(category: Category): string {
   if (typeof category.name === "string" && category.name.length > 0) {
     return category.name;
   }
@@ -17,7 +17,7 @@ function categoryLabel(
 }
 
 export default async function Home() {
-  let categories: Awaited<ReturnType<typeof getCategories>>["contents"] = [];
+  let categories: Category[] = [];
   let categoryError: string | null = null;
 
   try {
@@ -28,7 +28,7 @@ export default async function Home() {
       error instanceof Error ? error.message : "カテゴリの取得に失敗しました";
   }
 
-  let articles: Awaited<ReturnType<typeof getArticles>>["contents"] = [];
+  let articles: Article[] = [];
   let articleError: string | null = null;
 
   try {
