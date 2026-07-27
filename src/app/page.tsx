@@ -1,6 +1,6 @@
 export default async function Home() {
-  // TODO: 確認用 — loading UI 確認後に削除
-  await new Promise((r) => setTimeout(r, 5000));
+  // ローカルで確認用 — loading UI 確認後に削除
+  // await new Promise((r) => setTimeout(r, 5000));
 
   return (
     <div className="mx-auto flex w-full flex-1 items-center justify-center px-4 py-10 text-center sm:px-6 sm:py-16">
