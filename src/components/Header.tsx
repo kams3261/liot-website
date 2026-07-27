@@ -3,16 +3,19 @@ import Link from "next/link";
 export function Header() {
   return (
     <header className="border-b border-zinc-200">
-      <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-lg font-medium text-zinc-900">
+      <div className="mx-auto flex w-full max-w-4xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-0 sm:px-6 sm:py-4">
+        <Link
+          href="/"
+          className="text-base font-medium text-zinc-900 sm:text-lg"
+        >
           Test Website
         </Link>
         <nav aria-label="グローバルナビゲーション">
-          <ul className="flex gap-6">
+          <ul className="flex flex-wrap justify-center gap-x-4 gap-y-1 sm:justify-end sm:gap-x-6 sm:gap-y-0">
             <li>
               <Link
                 href="/"
-                className="text-sm font-medium text-zinc-700 hover:text-zinc-900"
+                className="inline-block py-1.5 text-sm font-medium text-zinc-700 hover:text-zinc-900 active:text-zinc-900 sm:py-0"
               >
                 Home
               </Link>
@@ -20,7 +23,7 @@ export function Header() {
             <li>
               <Link
                 href="/about"
-                className="text-sm font-medium text-zinc-700 hover:text-zinc-900"
+                className="inline-block py-1.5 text-sm font-medium text-zinc-700 hover:text-zinc-900 active:text-zinc-900 sm:py-0"
               >
                 About
               </Link>
@@ -28,7 +31,7 @@ export function Header() {
             <li>
               <Link
                 href="/works"
-                className="text-sm font-medium text-zinc-700 hover:text-zinc-900"
+                className="inline-block py-1.5 text-sm font-medium text-zinc-700 hover:text-zinc-900 active:text-zinc-900 sm:py-0"
               >
                 Works
               </Link>
