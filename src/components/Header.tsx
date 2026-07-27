@@ -8,7 +8,7 @@ export function Header() {
           href="/"
           className="text-base font-medium text-zinc-900 sm:text-lg"
         >
-          Test Website
+          Website.
         </Link>
         <nav aria-label="グローバルナビゲーション">
           <ul className="flex flex-wrap justify-center gap-x-4 gap-y-1 sm:justify-end sm:gap-x-6 sm:gap-y-0">
