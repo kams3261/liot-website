@@ -3,7 +3,7 @@ import Link from "next/link";
 export function Header() {
   return (
     <header className="border-b border-zinc-200">
-      <div className="mx-auto flex w-full max-w-4xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-0 sm:px-6 sm:py-4">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-0 sm:px-6 sm:py-4">
         <Link
           href="/"
           className="text-base font-medium text-zinc-900 sm:text-lg"
