@@ -1,5 +1,6 @@
 import { createClient } from "microcms-js-sdk";
 
+import type { Article, MicroCMSListResponse as ArticleListResponse } from "@/types/article";
 import type { Category, MicroCMSListResponse } from "@/types/category";
 
 function createMicroCMSClient() {
@@ -24,5 +25,20 @@ export async function getCategories(): Promise<MicroCMSListResponse<Category>> {
 
   return client.get<MicroCMSListResponse<Category>>({
     endpoint: "categories",
+  });
+}
+
+/** 記事 API（管理画面の API 名が違う場合は endpoint を変更） */
+export async function getArticles(
+  limit = 3,
+): Promise<ArticleListResponse<Article>> {
+  const client = createMicroCMSClient();
+
+  return client.get<ArticleListResponse<Article>>({
+    endpoint: "blogs",
+    queries: {
+      limit,
+      orders: "-publishedAt",
+    },
   });
 }
