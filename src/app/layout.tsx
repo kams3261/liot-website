@@ -33,7 +33,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-dvh flex-col overflow-x-hidden">
         <Header />
-        <main className="flex min-h-0 flex-1 flex-col">{children}</main>
+        <main className="flex min-h-0 flex-1 flex-col px-5 sm:px-0">{children}</main>
         <Footer />
       </body>
     </html>
