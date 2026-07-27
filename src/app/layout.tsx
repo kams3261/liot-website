@@ -17,7 +17,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Liot",
+  title: {
+    default: "Liot",
+    template: "%s | Liot",
+  },
   description: "Liot website",
 };
 
