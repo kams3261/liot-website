@@ -51,7 +51,6 @@ export default async function Home() {
 
   return (
     <main className="mx-auto flex min-h-full max-w-2xl flex-1 flex-col gap-8 px-6 py-16">
-      <h1 className="text-3xl font-semibold">Hello World.</h1>
 
       <section>
         <h2 className="mb-4 text-xl font-medium">カテゴリ（microCMS）</h2>
