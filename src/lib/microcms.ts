@@ -29,16 +29,27 @@ export async function getCategories(): Promise<MicroCMSListResponse<Category>> {
 }
 
 /** 記事 API（管理画面の API 名が違う場合は endpoint を変更） */
+const ARTICLE_ENDPOINT = "blogs";
+
 export async function getArticles(
   limit = 3,
 ): Promise<ArticleListResponse<Article>> {
   const client = createMicroCMSClient();
 
   return client.get<ArticleListResponse<Article>>({
-    endpoint: "blogs",
+    endpoint: ARTICLE_ENDPOINT,
     queries: {
       limit,
       orders: "-publishedAt",
     },
+  });
+}
+
+export async function getArticle(id: string): Promise<Article> {
+  const client = createMicroCMSClient();
+
+  return client.get<Article>({
+    endpoint: ARTICLE_ENDPOINT,
+    contentId: id,
   });
 }

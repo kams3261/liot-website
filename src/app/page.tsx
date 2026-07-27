@@ -1,3 +1,10 @@
+import Link from "next/link";
+
+import {
+  articlePath,
+  articleTitle,
+  formatPublishedAt,
+} from "@/lib/article-display";
 import { getArticles, getCategories } from "@/lib/microcms";
 
 function categoryLabel(
@@ -7,23 +14,6 @@ function categoryLabel(
     return category.name;
   }
   return category.id;
-}
-
-function articleTitle(
-  article: Awaited<ReturnType<typeof getArticles>>["contents"][number],
-): string {
-  if (typeof article.title === "string" && article.title.length > 0) {
-    return article.title;
-  }
-  return article.id;
-}
-
-function formatPublishedAt(publishedAt: string): string {
-  const date = new Date(publishedAt);
-  if (Number.isNaN(date.getTime())) {
-    return publishedAt;
-  }
-  return date.toLocaleDateString("ja-JP");
 }
 
 export default async function Home() {
@@ -51,7 +41,6 @@ export default async function Home() {
 
   return (
     <main className="mx-auto flex min-h-full max-w-2xl flex-1 flex-col gap-8 px-6 py-16">
-
       <section>
         <h2 className="mb-4 text-xl font-medium">カテゴリ（microCMS）</h2>
         {categoryError ? (
@@ -80,9 +69,14 @@ export default async function Home() {
                 key={article.id}
                 className="border-b border-zinc-200 pb-4 last:border-b-0"
               >
-                <p className="font-medium">{articleTitle(article)}</p>
+                <Link
+                  href={articlePath(article.id)}
+                  className="font-medium text-zinc-900 underline-offset-2 hover:underline"
+                >
+                  {articleTitle(article)}
+                </Link>
                 <time
-                  className="text-sm text-zinc-500"
+                  className="mt-1 block text-sm text-zinc-500"
                   dateTime={article.publishedAt}
                 >
                   {formatPublishedAt(article.publishedAt)}
