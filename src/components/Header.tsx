@@ -25,6 +25,14 @@ export function Header() {
                 About
               </Link>
             </li>
+            <li>
+              <Link
+                href="/works"
+                className="text-sm font-medium text-zinc-700 hover:text-zinc-900"
+              >
+                Works
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
