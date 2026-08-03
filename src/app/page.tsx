@@ -5,8 +5,6 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  // ローカルで確認用 — loading UI 確認後に削除
-  // await new Promise((r) => setTimeout(r, 5000));
 
   return (
     <>
