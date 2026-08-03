@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Test",
 };
 
+// Supabase から動的に取得するため、ビルド時の静的生成をスキップ
+export const dynamic = "force-dynamic";
+
 type TestTableRow = {
   id: number;
   created_at: string;

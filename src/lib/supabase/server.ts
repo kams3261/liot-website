@@ -6,7 +6,7 @@ export function createSupabaseServerClient() {
 
   if (!url || !anonKey) {
     throw new Error(
-      "NEXT_PUBLIC_SUPABASE_URL と NEXT_PUBLIC_SUPABASE_ANON_KEY を .env.local に設定してください。",
+      "NEXT_PUBLIC_SUPABASE_URL と NEXT_PUBLIC_SUPABASE_ANON_KEY を環境変数に設定してください（ローカル: .env.local / Vercel: Project Settings → Environment Variables）。",
     );
   }
 
