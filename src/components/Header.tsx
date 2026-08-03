@@ -36,6 +36,14 @@ export function Header() {
                 Works
               </Link>
             </li>
+            <li>
+              <Link
+                href="/test"
+                className="inline-block py-1.5 text-sm font-medium text-zinc-700 hover:text-zinc-900 active:text-zinc-900 sm:py-0"
+              >
+                Test
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
